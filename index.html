@@ -117,7 +117,8 @@ blockquote cite{display:block;font:400 .8rem var(--mono);margin-top:.5rem;font-s
 .loop li:last-child::after{content:"↺ back to 01";position:absolute;left:2.6rem;bottom:-1.2rem;font:500 .68rem var(--mono);color:var(--ink-3)}
 
 .corrections{margin:3rem 0 1rem;border:1.5px solid var(--ink);padding:1.2rem 1.4rem;background:var(--paper)}
-.corrections h3{margin:0 0 .8rem;font:500 .75rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.corrections.story{padding:1.2rem 1.4rem .6rem}
+.corrections.story h3{margin:0 0 .35rem}
 .corrections p{font-size:.95rem}
 .corrections s{color:var(--ink-3)}
 
@@ -243,10 +244,13 @@ footer.entry{padding-bottom:6rem}
     </ol>
     <p style="margin-top:2.4rem">The full guide is public: <a href="https://github.com/JonBold11/how-i-work">How I Work</a>, the operating documents and templates behind these eight lines.</p>
 
-    <div class="corrections">
-      <h3>Corrections I made to my own work</h3>
-      <p>An early result read <s>58%</s> <b>42%</b>. Two test runs had shared the AI's memory, which made one look cheaper. I published the correction and changed the runner so runs can't share it.</p>
-      <p style="margin:0">I assumed runs varied by about <s>±5%</s>. One task varied by <b>29%</b> between two runs. I dropped the assumption and now report two runs per task.</p>
+    <div class="corrections story">
+      <h3>I give you an honest account, including my mistakes.</h3>
+      <p>When I find an error in my own numbers, I correct it in public and keep the original visible.</p>
+      <details><summary>The corrections</summary>
+        <p>An early result read <s>58%</s> <b>42%</b>. Two test runs had shared the AI's memory, which made one look cheaper. I published the correction and changed the runner so runs can't share it.</p>
+        <p style="margin:0">I assumed runs varied by about <s>±5%</s>. One task varied by <b>29%</b> between two runs. I dropped the assumption and now report two runs per task.</p>
+      </details>
     </div>
   </div>
 </section>
