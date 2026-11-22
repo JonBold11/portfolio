@@ -121,6 +121,17 @@ blockquote cite{display:block;font:400 .8rem var(--mono);margin-top:.5rem;font-s
 .corrections p{font-size:.95rem}
 .corrections s{color:var(--ink-3)}
 
+/* stories */
+.story{border-top:1px solid var(--rule);padding:1.4rem 0 .4rem}
+.story:first-of-type{border-top:0}
+.story h3{margin:.5rem 0 .35rem;font:600 1.15rem/1.35 var(--serif)}
+.story > p:not(.era){color:var(--ink-2);margin-bottom:.5rem}
+.story details summary{list-style:none;cursor:pointer;display:inline-block;font:500 .75rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);border-bottom:1px solid var(--signal);padding-bottom:.2rem;margin:.2rem 0 .8rem}
+.story details summary::-webkit-details-marker{display:none}
+.story details summary::after{content:" +";color:var(--signal)}
+.story details[open] summary::after{content:" −"}
+.story details p{font-size:1rem}
+.story .era{margin:0}
 /* background entries */
 .era{font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin:2.6rem 0 -.2rem}
 .gap{margin:3.5rem 0 1rem;font:600 clamp(1.45rem,2.6vw,1.9rem)/1.3 var(--serif);letter-spacing:-.01em}
@@ -168,10 +179,8 @@ footer.entry{padding-bottom:6rem}
     <div class="verdict">
       <div><strong>40.7%</strong>fewer tokens</div>
       <div><strong>6 / 6</strong>runs passed the test</div>
-      <div><strong>0</strong>times ranked last, blind</div>
+      <div><strong>2 / 3</strong>tasks with the most thorough tests, judged blind</div>
     </div>
-
-    <div class="depth"><b>20 seconds</b> · you have the headline. Everything below is the proof.</div>
 
     <h3>What I built</h3>
     <p>A runner that gives the AI one written task at a time, checks the result with a fixed test, and records exactly how many tokens the task used. "Done" is decided by the test, not by the AI. Every task runs on a throwaway copy of the real project, so nothing touches the original.</p>
@@ -208,7 +217,7 @@ footer.entry{padding-bottom:6rem}
 
 <!-- DELIVERED -->
 <section class="entry" data-read>
-  <div class="stamp"><b>ENTRY 02</b>Handover<br><span class="pending">year pending</span></div>
+  <div class="stamp"><b>ENTRY 02</b>Built for someone else<br><span class="pending">year pending</span></div>
   <div>
     <h2>Built it, handed it over, and she outgrew it.</h2>
     <p>I built an automation in Make for a friend: write one post, and it adapted and published it across several platforms. I built it step by step with AI guiding me, before AI could connect to Make directly. She used it for <span class="pending">how long</span>, and it saved her <span class="pending">time saved</span>. It became her way into AI. She has since moved past it and builds with AI on her own.</p>
@@ -216,22 +225,23 @@ footer.entry{padding-bottom:6rem}
   </div>
 </section>
 
-<div class="wrap"><div class="depth"><b>2 minutes</b> · you know what I build and how I test it.</div></div>
-
 <!-- HOW I WORK -->
 <section class="entry" data-read>
-  <div class="stamp"><b>ENTRY 03</b>Method<br>applied to every project</div>
+  <div class="stamp"><b>ENTRY 03</b>How I work<br>every project</div>
   <div>
-    <h2>The same habits I used in the Army, applied to AI.</h2>
+    <h2>How I run every project.</h2>
+    <p>I run every project from the same operating guide. Here it is in eight lines.</p>
     <ol class="loop">
-      <li><b>Find where it breaks.</b> Start from the real problem, not the tool.</li>
-      <li><b>Set up the tools.</b> Use what already exists before building anything new.</li>
-      <li><b>Put limits and checks around them.</b> Budgets, caps, and a test that decides when the work is done.</li>
-      <li><b>Test honestly.</b> Compare against a plain baseline, keep the failures, and let someone else judge quality blind.</li>
-      <li><b>Write it down.</b> Procedures someone else can follow without me.</li>
-      <li><b>Hand it over.</b> The goal is that it runs without me.</li>
+      <li><b>Define done first.</b> What the result must be, what it must not break, and what waits for later.</li>
+      <li><b>Reuse before building.</b> Compare the tools that already exist, and pick the smallest one that does the job.</li>
+      <li><b>Turn the goal into bounded work.</b> A written task with limits, a budget, and a test that decides when it's done.</li>
+      <li><b>Direct the AI; own the result.</b> The AI writes the code. I set the context, the rules and the boundaries.</li>
+      <li><b>Check it independently.</b> Judge the exact result against the test, with a separate reviewer where quality matters.</li>
+      <li><b>Measure the real cost.</b> Count retries, corrections and failed work, not just the cheapest request.</li>
+      <li><b>Write it down.</b> SOPs (standard operating procedures), decisions and handoff notes, so someone else can pick it up without me.</li>
+      <li><b>Improve from evidence.</b> Change the method only when the record shows it should change.</li>
     </ol>
-    <p style="margin-top:2.4rem">The full method is public: <a href="https://github.com/JonBold11/how-i-work">How I Work</a>, the operating documents I use on every project.</p>
+    <p style="margin-top:2.4rem">The full guide is public: <a href="https://github.com/JonBold11/how-i-work">How I Work</a>, the operating documents and templates behind these eight lines.</p>
 
     <div class="corrections">
       <h3>Corrections I made to my own work</h3>
@@ -247,26 +257,51 @@ footer.entry{padding-bottom:6rem}
   <div>
     <h2>Where the habits come from.</h2>
 
-    <p class="era">Iraq · 2004–05 · civil affairs</p>
-    <h3>Finding out what people actually need</h3>
-    <p>I was cross-leveled into a civil affairs unit rebuilding the country. I sat down with local leaders and sheikhs through an interpreter, asked what their communities needed, and wrote up what should be built. One of those assessments became the rebuilding of a courthouse in Baghdad, under my guidance. I was a private first class.</p>
+    <div class="story">
+      <p class="era">Iraq · 2004–05</p>
+      <h3>I find out what people actually need before anything gets built.</h3>
+      <p>In Iraq I turned conversations with local leaders into building plans, including the rebuilding of a courthouse in Baghdad.</p>
+      <details><summary>The story</summary>
+        <p>I was cross-leveled into a civil affairs unit rebuilding the country. I sat down with local leaders and sheikhs through an interpreter, asked what their communities needed, and wrote up what should be built. My superiors decided from those write-ups. One of them became the rebuilding of a courthouse in Baghdad, under my guidance. I was a private first class.</p>
+      </details>
+    </div>
 
-    <h3>Owning it when there's no one else</h3>
-    <p>I was the unit's only radio operator. Every week the line formed at 5 a.m. so I could load encryption into everyone's radios. I briefed the lieutenant colonel of the infantry battalion we were attached to. Because I couldn't always be there, I got a cleared soldier authorized as my backup and trained her to run the system without me. I went from private first class to sergeant in a year.</p>
+    <div class="story">
+      <p class="era">Iraq · 2004–05</p>
+      <h3>If I'm the only one who knows a system, I make sure I'm not.</h3>
+      <p>As the unit's only radio operator, I trained an authorized backup so the radios never depended on me alone.</p>
+      <details><summary>The story</summary>
+        <p>Every week the line formed at 5 a.m. so I could load encryption into everyone's radios before I headed out, and I briefed the lieutenant colonel of the infantry battalion we were attached to. Because I couldn't always be there, I got a cleared soldier authorized as my backup, set her up with secure storage, and showed her how to run the system without me. I went from private first class to sergeant in a year.</p>
+      </details>
+    </div>
 
-    <p class="era">Kuwait · 2010–11 · sergeant</p>
-    <h3>Tracking what's expensive to lose</h3>
-    <p>I led an eight-person section in a transportation unit during the drawdown from Iraq. We ran the RFID systems that tracked our trucks across the route. Think UPS, somewhere far more volatile. Measuring where expensive things go, and keeping the tracking itself reliable, is what Token Tracker does for AI usage.</p>
+    <div class="story">
+      <p class="era">Kuwait · 2010–11</p>
+      <h3>I've been tracking expensive things for a long time.</h3>
+      <p>As a sergeant, I led an eight-person section running the systems that tracked our trucks during the drawdown from Iraq.</p>
+      <details><summary>The story</summary>
+        <p>Our transportation unit moved equipment out of Iraq. We ran RFID readers at sites across the route, so we knew roughly where every vehicle was. Think UPS, somewhere far more volatile. We kept those systems running and troubleshot the network segments we shared with other units' communications sections. Measuring where expensive things go, and keeping the tracking itself reliable, is what Token Tracker does for AI usage.</p>
+      </details>
+    </div>
 
-    <h3>Rules only work if someone holds the line</h3>
-    <p>As my unit's computer security compliance officer, I made sure badges stayed visible and no one walked away with their access card in the computer. I wrote people up for it. A budget cap or a required test only protects you if it's enforced every time.</p>
+    <div class="story">
+      <p class="era">Kuwait · 2010–11</p>
+      <h3>Nobody gets more access than the job needs. That includes AI.</h3>
+      <p>I enforced my unit's computer security and issued classified-network access only after clearance. I set AI up the same way.</p>
+      <details><summary>The story</summary>
+        <p>As my unit's computer security compliance officer, I made sure badges stayed visible and no one walked away with their access card still in the computer. I wrote people up for it. For the classified network, SIPRNet, nobody got a card until the intelligence officer had cleared them, and then I issued it. I also wrote the SOPs that turned those rules into steps soldiers could follow.</p>
+        <p>An AI tool should get the same treatment: only the access its job needs. In Token Tracker, the AI works on a throwaway copy of the project, may change only the files its task names, and may run only the task's check. Anything else is refused and logged. A budget cap or an access rule only protects you if it's enforced every time.</p>
+      </details>
+    </div>
 
-    <h3>Clearing the path so people can get to work</h3>
-    <p>When someone couldn't get into a system, I ran it down. For the classified network, SIPRNet, I worked with the intelligence officer on clearances and issued access cards once he approved. Getting the right people access through the right approvals is most of what rolling out a new tool involves. I also wrote the procedures and checklists that turned security rules into steps soldiers could follow.</p>
-
-    <p class="era">Since</p>
-    <h3>Talking to everyone in the room</h3>
-    <p>Sheikhs through an interpreter, a battalion commander before I'd made sergeant, then years selling sightseeing flights, working a hotel front desk and serving customers at a bank. I can explain the same system to the engineer who builds it and the executive who pays for it, and have both trust what I'm saying.</p>
+    <div class="story">
+      <p class="era">Since</p>
+      <h3>I can explain the same system to the engineer and the executive.</h3>
+      <p>Sheikhs through an interpreter, a battalion commander before I'd made sergeant, then years in customer-facing jobs.</p>
+      <details><summary>The story</summary>
+        <p>After the Army I sold sightseeing flights, worked a hotel front desk and served customers at a bank: years of explaining things to people who didn't share my vocabulary, often when something had gone wrong. It's why I can explain a system to the engineer who builds it and the executive who pays for it, and have both trust what I'm saying.</p>
+      </details>
+    </div>
 
     <p class="gap"><span>My resume has a ten-year gap.</span> I spent it recovering from service-connected injuries and fighting my way back to work. That fight is what I bring to your problems.</p>
   </div>
