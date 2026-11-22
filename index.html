@@ -57,6 +57,9 @@ h1 em{font-style:normal;color:var(--signal)}
 .cmds{margin-top:3rem;font:500 .85rem/1 var(--mono);display:flex;gap:2rem;flex-wrap:wrap}
 .cmds a{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:.25rem}
 .cmds a::before{content:"→ ";color:var(--signal)}
+.skip{margin:1.6rem 0 0;font:400 .78rem/1.9 var(--mono);color:var(--ink-3)}
+.skip a{color:var(--ink-2);white-space:nowrap;margin-left:1rem;text-decoration:none;border-bottom:1px solid var(--rule)}
+.skip a::after{content:" ↗";color:var(--signal)}
 
 /* depth markers */
 .depth{display:flex;align-items:center;gap:1rem;margin:3.5rem 0 0;font:500 .72rem/1.4 var(--mono);
@@ -66,6 +69,7 @@ h1 em{font-style:normal;color:var(--signal)}
 
 h2{font:800 clamp(1.7rem,3.2vw,2.5rem)/1.1 var(--serif);font-variation-settings:"opsz" 96;letter-spacing:-.015em;margin:0 0 1.5rem}
 h3{font:600 1.05rem/1.4 var(--sans);margin:2.2rem 0 .4rem}
+.sub{font:400 .85rem/1 var(--mono);color:var(--ink-3);margin:-1rem 0 1.4rem}
 p{margin:0 0 1rem}
 .lede{font-size:1.2rem;line-height:1.55;color:var(--ink)}
 .muted{color:var(--ink-2)}
@@ -168,6 +172,7 @@ footer.entry{padding-bottom:6rem}
   <h1>I build AI workflows that solve problems <em>before they cost you money</em>, and I document them so your team can run them without me.</h1>
   <p class="bridge">My AI bill ran away from me. I built the fix so yours doesn't.<span class="cursor"></span></p>
   <nav class="cmds"><a href="#record">see the record</a><a href="#contact">get in touch</a></nav>
+  <p class="skip">Just want the evidence? <a href="https://github.com/JonBold11/token-tracker-evidence">the full evaluation</a> <a href="https://github.com/JonBold11/token-tracker-evidence/tree/main/source">the source code</a> <a href="https://github.com/JonBold11/how-i-work">my SOPs</a></p>
 </header>
 
 <!-- CASE STUDY -->
@@ -221,7 +226,7 @@ footer.entry{padding-bottom:6rem}
   <div class="stamp"><b>ENTRY 02</b>Built for someone else<br><span class="pending">year pending</span></div>
   <div>
     <h2>Built it, handed it over, and she outgrew it.</h2>
-    <p>I built an automation in Make for a friend: write one post, and it adapted and published it across several platforms. I built it step by step with AI guiding me, before AI could connect to Make directly. She used it for <span class="pending">how long</span>, and it saved her <span class="pending">time saved</span>. It became her way into AI. She has since moved past it and builds with AI on her own.</p>
+    <p>I built a social media marketing workflow in Make for a friend: she wrote one post, and the automation adapted it and published it across several platforms. I built it step by step with AI guiding me, before AI could connect to Make directly. She used it for <span class="pending">how long</span>, and it saved her <span class="pending">time saved</span>. It became her way into AI. She has since moved past it and builds with AI on her own.</p>
     <blockquote><span class="pending">her quote, two or three sentences</span><cite>— <span class="pending">name or "a friend"</span></cite></blockquote>
   </div>
 </section>
@@ -230,8 +235,8 @@ footer.entry{padding-bottom:6rem}
 <section class="entry" data-read>
   <div class="stamp"><b>ENTRY 03</b>How I work<br>every project</div>
   <div>
-    <h2>How I run every project.</h2>
-    <p>I run every project from the same operating guide. Here it is in eight lines.</p>
+    <h2>8 lines of my SOPs.</h2>
+    <p class="sub">(standard operating procedures)</p>
     <ol class="loop">
       <li><b>Define done first.</b> What the result must be, what it must not break, and what waits for later.</li>
       <li><b>Reuse before building.</b> Compare the tools that already exist, and pick the smallest one that does the job.</li>
@@ -239,7 +244,7 @@ footer.entry{padding-bottom:6rem}
       <li><b>Direct the AI; own the result.</b> The AI writes the code. I set the context, the rules and the boundaries.</li>
       <li><b>Check it independently.</b> Judge the exact result against the test, with a separate reviewer where quality matters.</li>
       <li><b>Measure the real cost.</b> Count retries, corrections and failed work, not just the cheapest request.</li>
-      <li><b>Write it down.</b> SOPs (standard operating procedures), decisions and handoff notes, so someone else can pick it up without me.</li>
+      <li><b>Write it down.</b> Decisions, procedures and handoff notes, so someone else can pick it up without me.</li>
       <li><b>Improve from evidence.</b> Change the method only when the record shows it should change.</li>
     </ol>
     <p style="margin-top:2.4rem">The full guide is public: <a href="https://github.com/JonBold11/how-i-work">How I Work</a>, the operating documents and templates behind these eight lines.</p>
@@ -247,9 +252,8 @@ footer.entry{padding-bottom:6rem}
     <div class="corrections story">
       <h3>I give you an honest account, including my mistakes.</h3>
       <p>When I find an error in my own numbers, I correct it in public and keep the original visible.</p>
-      <details><summary>The corrections</summary>
-        <p>An early result read <s>58%</s> <b>42%</b>. Two test runs had shared the AI's memory, which made one look cheaper. I published the correction and changed the runner so runs can't share it.</p>
-        <p style="margin:0">I assumed runs varied by about <s>±5%</s>. One task varied by <b>29%</b> between two runs. I dropped the assumption and now report two runs per task.</p>
+      <details><summary>The correction</summary>
+        <p style="margin:0">An early result read <s>58%</s> <b>42%</b>. Two test runs had shared the AI's memory, which made one look cheaper. I published the correction and changed the runner so runs can't share it.</p>
       </details>
     </div>
   </div>
