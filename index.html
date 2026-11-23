@@ -47,6 +47,8 @@ a:hover{color:var(--signal)}
 
 /* hero */
 .hero{min-height:92vh;display:grid;align-content:center;padding:6rem 0 3rem}
+.hero.intro{min-height:0;padding:7rem 0 1rem}
+.hero.intro h1{max-width:none}
 .hero .line{font:400 .8rem/1.6 var(--mono);color:var(--ink-2);margin:0 0 2.5rem}
 .hero .line span{color:var(--signal)}
 h1{font:600 clamp(2.3rem,5.6vw,4.4rem)/1.04 var(--serif);font-variation-settings:"opsz" 144;letter-spacing:-.02em;margin:0;max-width:16ch}
@@ -167,11 +169,11 @@ footer.entry{padding-bottom:6rem}
 <main class="wrap">
 
 <!-- HERO -->
-<header class="hero" data-read>
-  <p class="line">jon_serrano <span>//</span> ai implementation &amp; automation <span>//</span> army veteran <span>//</span> remote <span>//</span> en · es</p>
-  <h1>I build AI workflows that solve problems <em>before they cost you money</em>, and I document them so your team can run them without me.</h1>
-  <p class="bridge">My AI bill ran away from me. I built the fix so yours doesn't.<span class="cursor"></span></p>
-  <nav class="cmds"><a href="#record">see the record</a><a href="#contact">get in touch</a></nav>
+<header class="hero intro" data-read>
+  <p class="line">jon_serrano <span>//</span> the full log</p>
+  <h1>The long version.</h1>
+  <p class="bridge">The <a href="https://jonbold11.github.io/portfolio-visual/">one-page summary</a> makes the claims. This page shows how I got there.<span class="cursor"></span></p>
+  <nav class="cmds"><a href="#record">token tracker</a><a href="#delivered">the automation</a><a href="#watch">the watch</a><a href="#sops">my SOPs</a><a href="#service">service</a></nav>
   <p class="skip">Just want the evidence?<br><a href="https://github.com/JonBold11/token-tracker-evidence">the full evaluation</a> <a href="https://github.com/JonBold11/token-tracker-evidence/tree/main/source">the source code</a> <a href="https://github.com/JonBold11/how-i-work">my SOPs</a></p>
 </header>
 
@@ -179,14 +181,8 @@ footer.entry{padding-bottom:6rem}
 <section class="entry" id="record" data-read>
   <div class="stamp"><b>ENTRY 01</b>Token Tracker<br>Nov 19–21, 2026<span class="tag">6 runs · 6 pass</span></div>
   <div>
-    <h2>Cutting AI usage by about 40%, without cutting quality.</h2>
+    <h2>How I measured the 40%.</h2>
     <p class="lede">While building Exocorder, an Android app I'm developing, my AI usage grew faster than I could sustain. I didn't want to guess at the cause, so I set out to measure it.</p>
-
-    <div class="verdict">
-      <div><strong>40.7%</strong>fewer tokens</div>
-      <div><strong>6 / 6</strong>runs passed the test</div>
-      <div><strong>2 / 3</strong>tasks with the most thorough tests, judged blind</div>
-    </div>
 
     <h3>What I built</h3>
     <p>A runner that gives the AI one written task at a time, checks the result with a fixed test, and records exactly how many tokens the task used. "Done" is decided by the test, not by the AI. Every task runs on a throwaway copy of the real project, so nothing touches the original.</p>
@@ -222,7 +218,7 @@ footer.entry{padding-bottom:6rem}
 </section>
 
 <!-- DELIVERED -->
-<section class="entry" data-read>
+<section class="entry" id="delivered" data-read>
   <div class="stamp"><b>ENTRY 02</b>Built for someone else<br><span class="pending">year pending</span></div>
   <div>
     <h2>Built it, handed it over, and she outgrew it.</h2>
@@ -231,9 +227,32 @@ footer.entry{padding-bottom:6rem}
   </div>
 </section>
 
+<!-- WATCH -->
+<section class="entry" id="watch" data-read>
+  <div class="stamp"><b>ENTRY 03</b>Built for my daughter<br>Sep 2026<span class="tag">2 devices · 15 test programs</span></div>
+  <div>
+    <h2>Designing for a user who can't read a clock.</h2>
+    <p class="lede">The front page shows the watch running. This is how it was built, and why it works for a small child and a busy parent.</p>
+
+    <h3>Designed around the people using it</h3>
+    <p>A small child can't read numbers, so time is shown as rainbow fluid draining away. When it runs out, she taps a leaf to stop the alarm and meets a creature for that day's letter, working through the alphabet one letter at a time. The parent sets the timer from a separate dial, with no phone: start, pause, quietly change the time while it runs, or cancel.</p>
+
+    <h3>Safe to change</h3>
+    <p>New firmware only goes onto the two registered devices: the install tool checks each board's unique chip ID before writing anything, and never wipes saved settings. It's the same least-privilege rule I apply to AI tools, in hardware.</p>
+
+    <h3>Done means working on the device, not just building</h3>
+    <p>A successful build doesn't prove anything about what's on the screen, so nothing counts as done until it's checked on the real devices. My own feedback went straight back into the work: a clipped Back button, faint help text and a battery icon that looked wrong were each logged and addressed in the next version.</p>
+
+    <h3>Written down for whoever picks it up next</h3>
+    <p>The project has 15 automated test programs and a handoff document written so the next session can continue without anything from memory: what's installed, what's verified, and what still needs checking.</p>
+
+    <p class="limits"><b>What this doesn't show.</b> It's a personal build for my family, not a product for sale. AI wrote the firmware; I set the requirements, made the design decisions and tested it on the devices.</p>
+  </div>
+</section>
+
 <!-- HOW I WORK -->
-<section class="entry" data-read>
-  <div class="stamp"><b>ENTRY 03</b>How I work<br>every project</div>
+<section class="entry" id="sops" data-read>
+  <div class="stamp"><b>ENTRY 04</b>How I work<br>every project</div>
   <div>
     <h2>8 lines of my SOPs.</h2>
     <p class="sub">(standard operating procedures)</p>
@@ -260,14 +279,15 @@ footer.entry{padding-bottom:6rem}
 </section>
 
 <!-- WHAT I BRING -->
-<section class="entry" data-read>
-  <div class="stamp"><b>ENTRY 04</b>Service<br>U.S. Army<br>Iraq · Kuwait</div>
+<section class="entry" id="service" data-read>
+  <div class="stamp"><b>ENTRY 05</b>Service<br>U.S. Army<br>Iraq · Kuwait</div>
   <div>
-    <h2>Where the habits come from.</h2>
+    <h2>The Army-to-AI table, explained.</h2>
+    <p>Each row of the table on the front page, with the story behind it.</p>
 
     <div class="story">
       <p class="era">Iraq · 2004–05</p>
-      <h3>I find out what people actually need before anything gets built.</h3>
+      <h3>Requirements before code</h3>
       <p>In Iraq I turned conversations with local leaders into building plans, including the rebuilding of a courthouse in Baghdad.</p>
       <details><summary>The story</summary>
         <p>I was cross-leveled into a civil affairs unit rebuilding the country. I sat down with local leaders and sheikhs through an interpreter, asked what their communities needed, and wrote up what should be built. My superiors decided from those write-ups. One of them became the rebuilding of a courthouse in Baghdad, under my guidance. I was a private first class.</p>
@@ -276,7 +296,7 @@ footer.entry{padding-bottom:6rem}
 
     <div class="story">
       <p class="era">Iraq · 2004–05</p>
-      <h3>If I'm the only one who knows a system, I make sure I'm not.</h3>
+      <h3>No single point of failure</h3>
       <p>As the unit's only radio operator, I trained an authorized backup so the radios never depended on me alone.</p>
       <details><summary>The story</summary>
         <p>Every week the line formed at 5 a.m. so I could load encryption into everyone's radios before I headed out, and I briefed the lieutenant colonel of the infantry battalion we were attached to. Because I couldn't always be there, I got a cleared soldier authorized as my backup, set her up with secure storage, and showed her how to run the system without me. I went from private first class to sergeant in a year.</p>
@@ -285,7 +305,7 @@ footer.entry{padding-bottom:6rem}
 
     <div class="story">
       <p class="era">Kuwait · 2010–11</p>
-      <h3>I've been tracking expensive things for a long time.</h3>
+      <h3>Tracking AI usage</h3>
       <p>As a sergeant, I led an eight-person section running the systems that tracked our trucks during the drawdown from Iraq.</p>
       <details><summary>The story</summary>
         <p>Our transportation unit moved equipment out of Iraq. We ran RFID readers at sites across the route, so we knew roughly where every vehicle was. Think UPS, somewhere far more volatile. We kept those systems running and troubleshot the network segments we shared with other units' communications sections. Measuring where expensive things go, and keeping the tracking itself reliable, is what Token Tracker does for AI usage.</p>
@@ -294,7 +314,7 @@ footer.entry{padding-bottom:6rem}
 
     <div class="story">
       <p class="era">Kuwait · 2010–11</p>
-      <h3>Nobody gets more access than the job needs. That includes AI.</h3>
+      <h3>Least privilege for AI</h3>
       <p>I enforced my unit's computer security and issued classified-network access only after clearance. I set AI up the same way.</p>
       <details><summary>The story</summary>
         <p>As my unit's computer security compliance officer, I made sure badges stayed visible and no one walked away with their access card still in the computer. I wrote people up for it. For the classified network, SIPRNet, nobody got a card until the intelligence officer had cleared them, and then I issued it. I also wrote the SOPs that turned those rules into steps soldiers could follow.</p>
@@ -304,24 +324,23 @@ footer.entry{padding-bottom:6rem}
 
     <div class="story">
       <p class="era">Since</p>
-      <h3>I can explain the same system to the engineer and the executive.</h3>
+      <h3>Talks to executives</h3>
       <p>Sheikhs through an interpreter, a battalion commander before I'd made sergeant, then years in customer-facing jobs.</p>
       <details><summary>The story</summary>
         <p>After the Army I sold sightseeing flights, worked a hotel front desk and served customers at a bank: years of explaining things to people who didn't share my vocabulary, often when something had gone wrong. It's why I can explain a system to the engineer who builds it and the executive who pays for it, and have both trust what I'm saying.</p>
       </details>
     </div>
 
-    <p class="gap"><span>My resume has a ten-year gap.</span> I spent it recovering from service-connected injuries and fighting my way back to work. That fight is what I bring to your problems.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <footer class="entry" id="contact" data-read>
-  <div class="stamp"><b>END OF LOG</b>status: available<br>remote</div>
+  <div class="stamp"><b>END OF LOG</b>status: available<br>Queens, New York · remote</div>
   <div>
     <h2>Let's talk.</h2>
     <p class="lede">I'm looking for remote AI implementation and automation work, where setting things up carefully, testing them honestly and writing them down matters.</p>
-    <p class="contact"><a href="#">email</a><a href="#">linkedin</a><a href="https://github.com/JonBold11">github</a><a href="#">resume (pdf)</a></p>
+    <p class="contact"><a href="mailto:jserrano1130@gmail.com">jserrano1130@gmail.com</a><a href="https://github.com/JonBold11">github</a></p>
   </div>
 </footer>
 </main>
